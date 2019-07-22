@@ -6,6 +6,8 @@ class TinyTldLengthTest < Minitest::Test
   end
 
   def test_it_does_something_useful
-    assert true #false
+    list = TinyTldLength::List.new.call
+    assert !list.nil?
   end
+
 end
