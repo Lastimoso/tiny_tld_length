@@ -23,9 +23,13 @@ Or install it yourself as:
 Extra Simple API:
 
 ttl = TinyTldLength.new
+
 ttl.tld_length('foo.domain.co.uk') # >> 2
+
 ttl.domain('sub1.sub2.domain.com.ar') # >> 'domain.com.ar'
+
 ttl.subdomain('sub1.sub2.domain.com.ar') # >> 'sub1', subdomain returns the first subdomain if many
+
 ttl.subdomains('sub1.sub2.domain.com.ar') # >> ['sub1','sub2']
 
 ## Configuration
