@@ -6,12 +6,12 @@ require "tiny_tld_length/version"
 Gem::Specification.new do |spec|
   spec.name          = "tiny_tld_length"
   spec.version       = TinyTldLength::VERSION
-  spec.authors       = ["Lastimoso"]
+  spec.authors       = ["Gerardo Raiden"]
   spec.email         = ["gerardoraiden@gmail.com"]
 
   spec.summary       = %q{Return the right tld_length parsing the host against the Public Suffix List}
   spec.description   = %q{TinyTldLength allows you to get the correct subdomains and domain of a host, parsing it against the Public Suffix List. Get all domains rigth (not only co.uk and other usual suspects). It keeps a cached version of the list to avoid an online verification with every request. Our focus is keep it ultra-light as it would be often used with every request (For instance, to get the correct subdomain in a multi-tenant app).}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/Lastimoso/tiny_tld_length"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

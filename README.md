@@ -1,8 +1,6 @@
 # TinyTldLength
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/tiny_tld_length`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+TinyTldLength allows you to get the correct subdomains and domain of a host, parsing it against the Public Suffix List. Get all domains rigth (not only co.uk and other usual suspects). It keeps a cached version of the list to avoid an online verification with every request. Our focus is keep it ultra-light as it would be often used with every request (For instance, to get the correct subdomain in a multi-tenant app).
 
 ## Installation
 
@@ -22,7 +20,21 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Extra Simple API:
+
+ttl = TinyTldLength.new
+ttl.tld_length('foo.domain.co.uk') # >> 2
+ttl.domain('sub1.sub2.domain.com.ar') # >> 'domain.com.ar'
+ttl.subdomain('sub1.sub2.domain.com.ar') # >> 'sub1', subdomain returns the first subdomain if many
+ttl.subdomains('sub1.sub2.domain.com.ar') # >> ['sub1','sub2']
+
+## Configuration
+
+By default it keeps the list cached locally 24hs in the /tmp folder.
+
+You can specify a local personalized list (as along as you follow Public Suffix List directives) and pass it to the initialize method:
+
+TinyTldLength.new(list_url: './mylist.dat')
 
 ## Development
 
